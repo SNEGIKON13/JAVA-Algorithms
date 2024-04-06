@@ -7,10 +7,7 @@
     <list default="true" id="2cd484c4-7fdd-4222-9425-49cf6c18bdaa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_1.3/task_11/src/main/java/org/example/EvaluatePostFix.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_11/src/main/java/org/example/EvaluatePostFix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_1.3/task_15/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_15/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_1.3/task_26/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_26/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_1.3/task_26/src/main/java/org/example/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_26/src/main/java/org/example/MyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentStackIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentStackIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentStackIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentDequeIterator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +33,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "develop",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/IdeaProjects/Java-Algorithms/chapter_1.3",
     "node.js.detected.package.eslint": "true",
@@ -64,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712403437665</updated>
       <workItem from="1712403438623" duration="1322000" />
-      <workItem from="1712404916348" duration="202000" />
+      <workItem from="1712404916348" duration="3016000" />
     </task>
     <servers />
   </component>

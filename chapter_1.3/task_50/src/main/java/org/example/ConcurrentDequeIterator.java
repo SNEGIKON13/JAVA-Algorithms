@@ -2,30 +2,30 @@ package org.example;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import java.util.Stack;
+import java.util.Deque;
 
-public class ConcurrentStackIterator<T> implements Iterator<T> {
-    private final Stack<T> stack;
+public class ConcurrentDequeIterator<T> implements Iterator<T> {
+    private final Deque<T> Deque;
     private final int counter;
-    public ConcurrentStackIterator(Stack <T> stack) {
-    this.stack = stack;
-    this.counter = stack.size();
+    public ConcurrentDequeIterator(Deque<T> Deque) {
+    this.Deque= Deque;
+    this.counter = Deque.size();
     }
 
     @Override
     public boolean hasNext() {
 
-        return stack.iterator().hasNext();
+        return Deque.iterator().hasNext();
     }
 
     @Override
     public T next() {
         checkModification();
-        return stack.iterator().next();
+        return Deque.iterator().next();
     }
 
     private void checkModification() {
-        if (counter != stack.size()) {
+        if (counter != Deque.size()) {
             throw new ConcurrentModificationException();
         }
     }
