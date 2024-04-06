@@ -3,8 +3,8 @@ import java.util.Iterator;
 import java.util.Stack;
 
 public class ConcurrentStackIterator<T> implements Iterator<T> {
-    private Stack<T> stack;
-    private int counter;
+    private final Stack<T> stack;
+    private final int counter;
     public ConcurrentStackIterator(Stack <T> stack) {
     this.stack = stack;
     this.counter = stack.size();
