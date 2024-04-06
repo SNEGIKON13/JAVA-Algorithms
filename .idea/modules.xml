@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Java-Algorithms.iml" filepath="$PROJECT_DIR$/.idea/Java-Algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_11/TASK_11.iml" filepath="$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_11/TASK_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_15/TASK_15.iml" filepath="$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_15/TASK_15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_26/TASK_26.iml" filepath="$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_26/TASK_26.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_50/TASK_50.iml" filepath="$PROJECT_DIR$/TASKS/CHAPTER_1.3/TASK_50/TASK_50.iml" />
     </modules>
   </component>
 </project>
