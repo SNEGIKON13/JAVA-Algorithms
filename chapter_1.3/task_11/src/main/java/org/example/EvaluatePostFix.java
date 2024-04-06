@@ -1,11 +1,10 @@
-import java.util.Scanner;
-import java.util.Stack;
-import java.util.StringTokenizer;
-import java.util.EmptyStackException;
+package org.example;
+
+import java.util.*;
 
 public class EvaluatePostFix {
     public static void main(String[] args) {
-        Stack<Integer> digits = new Stack<>();
+        Deque<Integer> digits = new LinkedList<>();
 
         Scanner in = new Scanner(System.in);
         String postfix = in.nextLine();
@@ -44,24 +43,22 @@ public class EvaluatePostFix {
         }
         System.out.println(digits.pop());
     }
-    public static int performOperation(Stack<Integer> digits, int operator) {
+    public static int performOperation(Deque<Integer> digits, int operator) {
         int lastNumber;
         int secondLastNumber;
         try {
             lastNumber = digits.pop();
             secondLastNumber = digits.pop();
-        }
-        catch (EmptyStackException e) {
+        } catch (EmptyStackException e) {
             throw new EmptyStackException();
         }
-        if (operator == 1) {
-            return secondLastNumber + lastNumber;
-        } else if (operator == 2) {
-            return secondLastNumber - lastNumber;
-        } else if (operator == 3) {
-            return secondLastNumber * lastNumber;
-        } else {
-            return secondLastNumber / lastNumber;
+        int result;
+        switch (operator) {
+            case 1 -> result = secondLastNumber + lastNumber;
+            case 2 -> result = secondLastNumber - lastNumber;
+            case 3 -> result = secondLastNumber * lastNumber;
+            default -> result = secondLastNumber / lastNumber;
         }
+        return result;
     }
 }
