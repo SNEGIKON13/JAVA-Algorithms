@@ -5,14 +5,14 @@ import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        Deque<Integer> Deque = new LinkedList<>();
-        Deque.push(1);
-        Deque.push(2);
-        Deque.push(3);
-        ConcurrentDequeIterator<Integer> iterator = new ConcurrentDequeIterator<Integer>(Deque);
+        Deque<Integer> deque = new LinkedList<>();
+        deque.push(1);
+        deque.push(2);
+        deque.push(3);
+        ConcurrentDequeIterator<Integer> iterator = new ConcurrentDequeIterator<Integer>(deque);
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
-            Deque.pop();
+            deque.pop();
         }
     }
 }
