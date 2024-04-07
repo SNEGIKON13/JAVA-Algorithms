@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2cd484c4-7fdd-4222-9425-49cf6c18bdaa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_1.3/task_11/src/main/java/org/example/EvaluatePostFix.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_11/src/main/java/org/example/EvaluatePostFix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentStackIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentDequeIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentDequeIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/ConcurrentDequeIterator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_1.3/task_50/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,25 +28,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.EvaluatePostFix.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "develop",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/IdeaProjects/Java-Algorithms/chapter_1.3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.EvaluatePostFix.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IdeaProjects/Java-Algorithms/chapter_1.3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -62,7 +64,8 @@
       <option name="presentableId" value="Default" />
       <updated>1712403437665</updated>
       <workItem from="1712403438623" duration="1322000" />
-      <workItem from="1712404916348" duration="3016000" />
+      <workItem from="1712404916348" duration="3481000" />
+      <workItem from="1712491229277" duration="300000" />
     </task>
     <servers />
   </component>

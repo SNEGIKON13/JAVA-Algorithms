@@ -19,17 +19,22 @@ public class EvaluatePostFix {
                     digits.push(Integer.parseInt(symbol));
                 } else {
                     int operator;
-                    if (symbol.equals("+")) {
-                        operator = 1;
-                    } else if (symbol.equals("-")) {
-                        operator = 2;
-                    } else if (symbol.equals("*")) {
-                        operator = 3;
-                    } else if (symbol.equals("/")) {
-                        operator = 4;
-                    } else {
-                        System.out.println("Постфиксная запись неверна!");
-                        return;
+                    switch (symbol) {
+                        case "+":
+                            operator = 1;
+                            break;
+                        case "-":
+                            operator = 2;
+                            break;
+                        case "*":
+                            operator = 3;
+                            break;
+                        case "/":
+                            operator = 4;
+                            break;
+                        default:
+                            System.out.println("Постфиксная запись неверна!");
+                            return;
                     }
                     try {
                         result = performOperation(digits, operator);
