@@ -7,7 +7,7 @@ import java.util.Collections;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         List<Domain> domainList = new ArrayList<>();
         List<Domain> reversedList = new ArrayList<>();
         Scanner input = new Scanner(System.in);
