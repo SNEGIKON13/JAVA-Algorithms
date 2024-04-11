@@ -7,9 +7,9 @@ import java.util.Collections;
 public class LS {
     public static void main(final String[] args) {
         String directoryPath = args[0];
-        boolean sortByTimeFlag = false,
-                sortBySizeFlag = false,
-                descendingFlag = false;
+        boolean sortByTimeFlag = false;
+        boolean sortBySizeFlag = false;
+        boolean descendingFlag = false;
         File[] files;
         for (int i = 1; i < args.length; i++) {
             switch (args[i]) {
@@ -28,26 +28,24 @@ public class LS {
         if (sortByTimeFlag && sortBySizeFlag) {
             Arrays.sort(files, new FilesModifiedDateComparator(descendingFlag).
                     thenComparing(new FilesSizeComparator(descendingFlag)));
-            for (File file : files) {
-                System.out.println(file.getName());
-            }
+            printOutResult(files);
         } else if (sortByTimeFlag) {
             Arrays.sort(files, new FilesModifiedDateComparator(descendingFlag));
-            for (File file : files) {
-                System.out.println(file.getName());
-            }
+            printOutResult(files);
         } else if (sortBySizeFlag) {
             Arrays.sort(files, new FilesSizeComparator(descendingFlag));
-            for (File file : files) {
-                System.out.println(file.getName());
-            }
+            printOutResult(files);
         } else if (descendingFlag) {
             Arrays.sort(files, Collections.reverseOrder());
         } else {
             Arrays.sort(files);
-            for (File file : files) {
-                System.out.println(file.getName());
-            }
+            printOutResult(files);
+        }
+    }
+
+    private static void printOutResult(final File[] files) {
+        for (File file : files) {
+            System.out.println(file.getName());
         }
     }
 }
