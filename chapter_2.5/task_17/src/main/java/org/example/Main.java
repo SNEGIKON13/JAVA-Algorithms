@@ -8,13 +8,11 @@ public class Main {
         System.out.println("Введите строку чисел разделяемых пробелом:");
         String str = input.nextLine();
         String[] strs = str.split(" ");
-        Integer[] array = new Integer[strs.length];
+        CheckStructure[] structure = new CheckStructure[strs.length];
         for (int i = 0; i < strs.length; i++) {
-            array[i] = Integer.parseInt(strs[i]);
+            structure[i] = new CheckStructure(Integer.parseInt(strs[i]), i);
         }
-        int[] index = ParallelArraySort.indirectSort(array);
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(index[i] + " ");
-        }
+        System.out.println("Сортировка является устойчивой: "
+                + CheckStructure.check(structure));
     }
 }

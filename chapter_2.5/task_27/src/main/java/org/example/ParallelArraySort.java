@@ -1,8 +1,11 @@
 package org.example;
 
-public class ParallelArraySort {
+public final class ParallelArraySort {
 
-    public static <T extends Comparable<T>> int[] indirectSort(T[] array) {
+    private ParallelArraySort() {}
+
+    public static <T extends Comparable<T>>
+    int[] indirectSort(final T[] array) {
         int[] index = new int[array.length];
         for (int i = 0; i < array.length; i++) {
             index[i] = i;

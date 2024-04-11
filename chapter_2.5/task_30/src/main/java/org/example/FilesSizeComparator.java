@@ -17,20 +17,17 @@ public class FilesSizeComparator implements Comparator<File> {
         long size2;
         if (f1.isDirectory()) {
             size1 = getFolderSize(f1);
-        }
-        else {
+        } else {
             size1 = f1.length();
         }
         if (f2.isDirectory()) {
             size2 = getFolderSize(f2);
-        }
-        else {
+        } else {
             size2 = f2.length();
         }
         if (upOrDown) {
             return Long.compare(size2, size1);
-        }
-        else {
+        } else {
             return Long.compare(size1, size2);
         }
     }

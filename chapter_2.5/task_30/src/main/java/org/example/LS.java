@@ -16,13 +16,13 @@ public class LS {
                 case "-t" -> sortByTimeFlag = true;
                 case "-s" -> sortBySizeFlag = true;
                 case "-d" -> descendingFlag = true;
+                default -> System.err.println("Invalid option: " + args[i]);
             }
         }
         File directory = new File(directoryPath);
         if (directory.isDirectory()) {
              files = directory.listFiles();
-        }
-        else {
+        } else {
             return;
         }
         if (sortByTimeFlag && sortBySizeFlag) {
@@ -31,23 +31,19 @@ public class LS {
             for (File file : files) {
                 System.out.println(file.getName());
             }
-        }
-        else if (sortByTimeFlag) {
+        } else if (sortByTimeFlag) {
             Arrays.sort(files, new FilesModifiedDateComparator(descendingFlag));
             for (File file : files) {
                 System.out.println(file.getName());
             }
-        }
-        else if (sortBySizeFlag) {
+        } else if (sortBySizeFlag) {
             Arrays.sort(files, new FilesSizeComparator(descendingFlag));
             for (File file : files) {
                 System.out.println(file.getName());
             }
-        }
-        else if (descendingFlag) {
+        } else if (descendingFlag) {
             Arrays.sort(files, Collections.reverseOrder());
-        }
-        else {
+        } else {
             Arrays.sort(files);
             for (File file : files) {
                 System.out.println(file.getName());

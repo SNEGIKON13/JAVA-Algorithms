@@ -16,8 +16,7 @@ public class FilesModifiedDateComparator implements Comparator<File> {
         long modifiedTime2 = file2.lastModified();
         if (upOrDown) {
             return Long.compare(modifiedTime2, modifiedTime1);
-        }
-        else {
+        } else {
             return Long.compare(modifiedTime1, modifiedTime2);
         }
     }
