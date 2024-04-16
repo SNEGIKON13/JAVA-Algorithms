@@ -12,11 +12,15 @@ public class LS {
         boolean descendingFlag = false;
         File[] files;
         for (int i = 1; i < args.length; i++) {
-            switch (args[i]) {
-                case "-t" -> sortByTimeFlag = true;
-                case "-s" -> sortBySizeFlag = true;
-                case "-d" -> descendingFlag = true;
-                default -> System.err.println("Invalid option: " + args[i]);
+            if (args[i].charAt(0) == '-') {
+                for (int j = 1; j < args[i].length(); j++) {
+                    switch (args[i].charAt(j)) {
+                        case 't' -> sortByTimeFlag = true;
+                        case 's' -> sortBySizeFlag = true;
+                        case 'd' -> descendingFlag = true;
+                        default -> System.err.println("Invalid option: " + args[i]);
+                    }
+                }
             }
         }
         File directory = new File(directoryPath);
