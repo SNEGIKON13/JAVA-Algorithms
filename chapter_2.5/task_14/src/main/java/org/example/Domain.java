@@ -4,11 +4,11 @@ public class Domain implements Comparable<Domain> {
 
     private String domen;
 
-    public Domain(String domen) {
+    public Domain(final String domen) {
         this.domen = domen;
     }
 
-    public void setDomen(String domen) {
+    public void setDomen(final String domen) {
         this.domen = domen;
     }
 
@@ -17,11 +17,11 @@ public class Domain implements Comparable<Domain> {
     }
 
     @Override
-    public int compareTo(Domain o) {
+    public int compareTo(final Domain o) {
         return this.domen.compareTo(o.domen);
     }
 
-    public static String reverseDomen(String domen) {
+    public static String reverseDomen(final String domen) {
         String[] domenArray = domen.split("\\.");
         StringBuilder reverseDomen = new StringBuilder();
         for (int i = domenArray.length - 1; i >= 0; i--) {
