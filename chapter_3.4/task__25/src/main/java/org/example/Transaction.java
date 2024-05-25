@@ -17,11 +17,11 @@ public class Transaction {
     @Override
     public int hashCode(){
         if(this.hash == null){
-            int hash = 17;
-            hash = 31 * hash + who.hashCode();
-            hash = 31 * hash + when.hashCode();
-            hash = 31 * hash + ((Double)amount).hashCode();
-            this.hash = hash;
+            int hash2 = 17;
+            hash2 = 31 * hash2 + who.hashCode();
+            hash2 = 31 * hash2 + when.hashCode();
+            hash2 = 31 * hash2 + ((Double)amount).hashCode();
+            this.hash = hash2;
         }
         return this.hash;
     }

@@ -55,7 +55,8 @@ public class HybridSort {
     private static void threeWayQuickSort(String[] array, int low, int high, int d) {
         if (high <= low) return;
 
-        int lt = low, gt = high;
+        int lt = low;
+        int gt = high;
         int v = charAt(array[low], d);
         int i = low + 1;
 
