@@ -6,7 +6,8 @@ public class IdealBalancedBST<Key extends Comparable<Key>, Value> {
     private class Node {
         Key key;
         Value val;
-        Node left, right;
+        Node left;
+        Node right;
         int size;
 
         Node(Key key, Value val, int size) {

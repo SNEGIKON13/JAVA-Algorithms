@@ -3,13 +3,14 @@ package org.example;
 class Node {
 
     int value;
-    Node left, right;
-    int count; // Counter for the number of nodes in the subtree
+    Node left;
+    Node right;
+    int count;
 
     Node(int value) {
         this.value = value;
         left = right = null;
-        count = 1; // Initialize count as 1 for the node itself
+        count = 1;
     }
 }
 
@@ -45,9 +46,9 @@ public class BinaryTree {
         root.right.right.count = 1;
         root.count = 7;
 
-        System.out.println(isBinaryTree(root)); // Output should be true
+        System.out.println(isBinaryTree(root));
 
-        root.right.count = 2; // Incorrect count to test the false case
-        System.out.println(isBinaryTree(root)); // Output should be false
+        root.right.count = 2;
+        System.out.println(isBinaryTree(root));
     }
 }
