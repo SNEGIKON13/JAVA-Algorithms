@@ -1,13 +1,9 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 public class BST<Key extends Comparable<Key>, Value> {
     private Node root;
-    private Node lastAccessedNode;
 
     private class Node {
         Key key;
@@ -36,14 +32,7 @@ public class BST<Key extends Comparable<Key>, Value> {
     }
 
     public Value get(Key key) {
-        if (lastAccessedNode != null && lastAccessedNode.key.compareTo(key) == 0) {
-            return lastAccessedNode.val;
-        }
-        Value val = get(root, key);
-        if (val != null) {
-            lastAccessedNode = getNode(root, key);
-        }
-        return val;
+        return get(root, key);
     }
 
     private Value get(Node x, Key key) {
@@ -54,21 +43,8 @@ public class BST<Key extends Comparable<Key>, Value> {
         else return x.val;
     }
 
-    private Node getNode(Node x, Key key) {
-        if (x == null) return null;
-        int cmp = key.compareTo(x.key);
-        if (cmp < 0) return getNode(x.left, key);
-        else if (cmp > 0) return getNode(x.right, key);
-        else return x;
-    }
-
     public void put(Key key, Value val) {
-        if (lastAccessedNode != null && lastAccessedNode.key.compareTo(key) == 0) {
-            lastAccessedNode.val = val;
-            return;
-        }
         root = put(root, key, val);
-        lastAccessedNode = getNode(root, key);
     }
 
     private Node put(Node x, Key key, Value val) {
@@ -84,7 +60,6 @@ public class BST<Key extends Comparable<Key>, Value> {
     public void delete(Key key) {
         if (!contains(key)) throw new NoSuchElementException("Key not found");
         root = delete(root, key);
-        lastAccessedNode = null; // Invalidate cache
     }
 
     private Node delete(Node x, Key key) {
@@ -131,17 +106,21 @@ public class BST<Key extends Comparable<Key>, Value> {
         printBST(node.right, prefix + (isTail ? "    " : "│   "), true);
     }
 
-    public void insertKeysToBalancedBST(List<Key> keys) {
-        Collections.sort(keys);
-        root = insertKeysToBalancedBST(keys, 0, keys.size() - 1);
-    }
+    public static void main(String[] args) {
+        BST<Character, Integer> bst = new BST<>();
 
-    private Node insertKeysToBalancedBST(List<Key> keys, int start, int end) {
-        if (start > end) return null;
-        int mid = (start + end) / 2;
-        Node node = new Node(keys.get(mid), null, end - start + 1);
-        node.left = insertKeysToBalancedBST(keys, start, mid - 1);
-        node.right = insertKeysToBalancedBST(keys, mid + 1, end);
-        return node;
+        char[] keys = "EASYQUESTION".toCharArray();
+        for (int i = 0; i < keys.length; i++) {
+            bst.put(keys[i], i + 1);
+        }
+
+        System.out.println("Initial BST:");
+        bst.printBST();
+
+        for (char key : keys) {
+            bst.delete(key);
+            System.out.println("\nBST after deleting key " + key + ":");
+            bst.printBST();
+        }
     }
 }
