@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.Stack;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.LinkedList;
+import java.util.*;
 
 public class NFA {
     private char[] re;
@@ -11,7 +8,7 @@ public class NFA {
     private int M;
 
     public NFA(String regexp) {
-        Stack<Integer> ops = new Stack<Integer>();
+        Deque<Integer> ops = new LinkedList<>();
         re = regexp.toCharArray();
         M = re.length;
         G = new Digraph(M + 2); // Увеличиваем размер графа на 2 для учета начального и конечного состояний
@@ -89,7 +86,7 @@ public class NFA {
 
         public Digraph(int V) {
             this.V = V;
-            adj = (List<Integer>[]) new List[V];
+            List<Integer>[] adj = new List[V];
             for (int v = 0; v < V; v++) {
                 adj[v] = new ArrayList<>();
             }
