@@ -26,11 +26,20 @@ public class IdealBalancedBST<Key extends Comparable<Key>, Value> {
     }
 
     private Node put(Node x, Key key, Value val) {
-        if (x == null) return new Node(key, val, 1);
+        if (x == null) {
+            return new Node(key, val, 1);
+        }
+
         int cmp = key.compareTo(x.key);
-        if (cmp < 0) x.left = put(x.left, key, val);
-        else if (cmp > 0) x.right = put(x.right, key, val);
-        else x.val = val;
+
+        if (cmp < 0) {
+            x.left = put(x.left, key, val);
+        } else if (cmp > 0) {
+            x.right = put(x.right, key, val);
+        } else {
+            x.val = val;
+        }
+
         x.size = 1 + size(x.left) + size(x.right);
         return x;
     }
@@ -40,7 +49,10 @@ public class IdealBalancedBST<Key extends Comparable<Key>, Value> {
     }
 
     private Node buildIdealBST(Key[] keys, Value[] vals, int lo, int hi) {
-        if (lo > hi) return null;
+        if (lo > hi) {
+            return null;
+        }
+
         int mid = lo + (hi - lo) / 2;
         Node node = new Node(keys[mid], vals[mid], 1);
         node.left = buildIdealBST(keys, vals, lo, mid - 1);
@@ -50,7 +62,9 @@ public class IdealBalancedBST<Key extends Comparable<Key>, Value> {
     }
 
     private int size(Node x) {
-        if (x == null) return 0;
+        if (x == null) {
+            return 0;
+        }
         return x.size;
     }
 
@@ -59,11 +73,19 @@ public class IdealBalancedBST<Key extends Comparable<Key>, Value> {
     }
 
     private Value get(Node x, Key key) {
-        if (x == null) return null;
+        if (x == null) {
+            return null;
+        }
+
         int cmp = key.compareTo(x.key);
-        if (cmp < 0) return get(x.left, key);
-        else if (cmp > 0) return get(x.right, key);
-        else return x.val;
+
+        if (cmp < 0) {
+            return get(x.left, key);
+        } else if (cmp > 0) {
+            return get(x.right, key);
+        } else {
+            return x.val;
+        }
     }
 
     public static void main(String[] args) {

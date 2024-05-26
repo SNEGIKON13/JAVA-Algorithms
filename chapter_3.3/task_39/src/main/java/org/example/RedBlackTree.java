@@ -23,12 +23,16 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
     }
 
     private boolean isRed(Node x) {
-        if (x == null) return false;
+        if (x == null) {
+            return false;
+        }
         return x.color == RED;
     }
 
     private int size(Node x) {
-        if (x == null) return 0;
+        if (x == null) {
+            return 0;
+        }
         return x.size;
     }
 
@@ -80,26 +84,38 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
     }
 
     private Node balance(Node h) {
-        if (isRed(h.right)) h = rotateLeft(h);
-        if (isRed(h.left) && isRed(h.left.left)) h = rotateRight(h);
-        if (isRed(h.left) && isRed(h.right)) flipColors(h);
+        if (isRed(h.right)) {
+            h = rotateLeft(h);
+        }
+        if (isRed(h.left) && isRed(h.left.left)) {
+            h = rotateRight(h);
+        }
+        if (isRed(h.left) && isRed(h.right)) {
+            flipColors(h);
+        }
 
         h.size = size(h.left) + size(h.right) + 1;
         return h;
     }
 
     public void deleteMin() {
-        if (!isRed(root.left) && !isRed(root.right))
+        if (!isRed(root.left) && !isRed(root.right)) {
             root.color = RED;
+        }
         root = deleteMin(root);
-        if (!isEmpty()) root.color = BLACK;
+        if (!isEmpty()) {
+            root.color = BLACK;
+        }
     }
 
     private Node deleteMin(Node h) {
-        if (h.left == null) return null;
+        if (h.left == null) {
+            return null;
+        }
 
-        if (!isRed(h.left) && !isRed(h.left.left))
+        if (!isRed(h.left) && !isRed(h.left.left)) {
             h = moveRedLeft(h);
+        }
 
         h.left = deleteMin(h.left);
         return balance(h);

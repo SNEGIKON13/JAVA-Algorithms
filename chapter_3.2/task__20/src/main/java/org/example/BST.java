@@ -30,10 +30,12 @@ public class BST {
             root = new Node(key);
             return root;
         }
-        if (key < root.key)
+
+        if (key < root.key) {
             root.left = insertRec(root.left, key);
-        else if (key > root.key)
+        } else if (key > root.key) {
             root.right = insertRec(root.right, key);
+        }
 
         return root;
     }
@@ -45,17 +47,21 @@ public class BST {
     }
 
     private void keysRec(Node node, int low, int high, List<Integer> result) {
-        if (node == null)
+        if (node == null) {
             return;
+        }
 
-        if (low < node.key)
+        if (low < node.key) {
             keysRec(node.left, low, high, result);
+        }
 
-        if (low <= node.key && high >= node.key)
+        if (low <= node.key && high >= node.key) {
             result.add(node.key);
+        }
 
-        if (high > node.key)
+        if (high > node.key) {
             keysRec(node.right, low, high, result);
+        }
     }
 
     public static void main(String[] args) {
