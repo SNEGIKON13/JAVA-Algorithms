@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.Stack;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.LinkedList;
+import java.util.*;
 
 public class NFA {
     private char[] re;
@@ -11,16 +8,20 @@ public class NFA {
     private int M;
 
     public NFA(String regexp) {
-        Stack<Integer> ops = new Stack<Integer>();
+        Deque<Integer> ops = new LinkedList<Integer>();
         re = regexp.toCharArray();
         M = re.length;
         G = new Digraph(M + 1);
 
         for (int i = 0; i < M; i++) {
             int lp = i;
-            if (re[i] == '(' || re[i] == '|') {
+            char currentChar = re[i];
+            boolean isNextStar = i < M - 1 && re[i + 1] == '*';
+            boolean isNextPlus = i < M - 1 && re[i + 1] == '+';
+
+            if (currentChar == '(' || currentChar == '|') {
                 ops.push(i);
-            } else if (re[i] == ')') {
+            } else if (currentChar == ')') {
                 int or = ops.pop();
                 if (re[or] == '|') {
                     lp = ops.pop();
@@ -31,16 +32,16 @@ public class NFA {
                 }
             }
 
-            if (i < M - 1 && re[i + 1] == '*') {
+            if (isNextStar) {
                 G.addEdge(lp, i + 1);
                 G.addEdge(i + 1, lp);
             }
 
-            if (i < M - 1 && re[i + 1] == '+') {
+            if (isNextPlus) {
                 G.addEdge(i + 1, lp); // Замыкание "+"
             }
 
-            if (re[i] == '(' || re[i] == '*' || re[i] == '+' || re[i] == ')') {
+            if (currentChar == '(' || currentChar == '*' || currentChar == '+' || currentChar == ')') {
                 G.addEdge(i, i + 1);
             }
         }
@@ -49,29 +50,38 @@ public class NFA {
     public boolean recognizes(String txt) {
         List<Integer> pc = new LinkedList<>();
         DirectedDFS dfs = new DirectedDFS(G, 0);
+
         for (int v = 0; v < G.V(); v++) {
-            if (dfs.marked(v)) pc.add(v);
+            if (dfs.marked(v)) {
+                pc.add(v);
+            }
         }
 
         for (int i = 0; i < txt.length(); i++) {
             List<Integer> match = new LinkedList<>();
+
             for (int v : pc) {
-                if (v < M) {
-                    if (re[v] == txt.charAt(i) || re[v] == '.') {
-                        match.add(v + 1);
-                    }
+                if (v < M && (re[v] == txt.charAt(i) || re[v] == '.')) {
+                    match.add(v + 1);
                 }
             }
+
             pc = new LinkedList<>();
             dfs = new DirectedDFS(G, match);
+
             for (int v = 0; v < G.V(); v++) {
-                if (dfs.marked(v)) pc.add(v);
+                if (dfs.marked(v)) {
+                    pc.add(v);
+                }
             }
         }
 
         for (int v : pc) {
-            if (v == M) return true;
+            if (v == M) {
+                return true;
+            }
         }
+
         return false;
     }
 

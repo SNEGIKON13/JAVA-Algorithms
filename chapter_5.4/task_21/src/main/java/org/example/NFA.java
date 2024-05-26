@@ -54,27 +54,31 @@ public class NFA {
         List<Integer> pc = new LinkedList<>();
         DirectedDFS dfs = new DirectedDFS(G, 0);
         for (int v = 0; v < G.V(); v++) {
-            if (dfs.marked(v)) pc.add(v);
+            if (dfs.marked(v)) {
+                pc.add(v);
+            }
         }
 
         for (int i = 0; i < txt.length(); i++) {
             List<Integer> match = new LinkedList<>();
             for (int v : pc) {
-                if (v < M) {
-                    if (re[v] == txt.charAt(i) || re[v] == '.') {
-                        match.add(v + 1);
-                    }
+                if (v < M && (re[v] == txt.charAt(i) || re[v] == '.')) {
+                    match.add(v + 1);
                 }
             }
-            pc = new LinkedList<>();
+            pc.clear();
             dfs = new DirectedDFS(G, match);
             for (int v = 0; v < G.V(); v++) {
-                if (dfs.marked(v)) pc.add(v);
+                if (dfs.marked(v)) {
+                    pc.add(v);
+                }
             }
         }
 
         for (int v : pc) {
-            if (v == M) return true;
+            if (v == M) {
+                return true;
+            }
         }
         return false;
     }
